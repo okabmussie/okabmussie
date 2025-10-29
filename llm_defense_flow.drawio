@@ -1,0 +1,178 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:143.0) Gecko/20100101 Firefox/143.0" version="28.2.7" pages="2">
+  <diagram id="LLM-Defense-Flow" name="Page-1">
+    <mxGraphModel dx="2455" dy="2253" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="1000" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user_left" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;User&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD366;strokeColor=#BA8B00;fontSize=14;fontStyle=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-93" y="4" width="165" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="input_filter" value="&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;Defense layer:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;Input filtering&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;(prompt checks)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="208.5" y="-22" width="263.5" height="128.5" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeWidth=3;strokeColor=#FFB570;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="707" y="-102" as="sourcePoint" />
+            <mxPoint x="707" y="611" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="707" y="-109" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="llm" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;LLM&lt;br&gt;(GPT-4o-mini)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;fontStyle=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="568" y="-490" width="281" height="383" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeWidth=3;strokeColor=#FFB570;exitX=0.903;exitY=1.054;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="post_redact">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="645" y="608" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1061" y="175" />
+              <mxPoint x="1172" y="175" />
+              <mxPoint x="1172" y="608" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="post_redact" value="&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;Defense layer:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;Post-response redaction&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="889" y="-10.5" width="252" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="user_right" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;User&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD366;strokeColor=#BA8B00;fontSize=14;fontStyle=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1246" y="4" width="194" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=block;strokeWidth=2;strokeColor=#6C8EBF" parent="1" source="user_left" target="input_filter" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="endArrow=block;strokeWidth=2;strokeColor=#6C8EBF;" parent="1" source="input_filter" target="llm" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="endArrow=block;strokeWidth=2;strokeColor=#6C8EBF;" parent="1" source="llm" target="post_redact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="endArrow=block;strokeWidth=2;strokeColor=#6C8EBF" parent="1" source="post_redact" target="user_right" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="retrieval" value="Retrieval filtering / summarization" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-30" y="1254" width="167" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="rag_index" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;shadow=1;glass=0;perimeterSpacing=0;fillStyle=auto;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" parent="1" vertex="1">
+          <mxGeometry x="176" y="358" width="1050" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="endArrow=block;dashed=1;strokeColor=#FFB570;strokeWidth=3;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="input_filter" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="287.75" y="128" as="sourcePoint" />
+            <mxPoint x="638" y="606" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="205" y="617" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="logs" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;&lt;span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Logs:&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;prompts, retrieved text, tool calls, defense decisions, model outputs&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="197" y="618" width="897" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Scenario 1&lt;br&gt;Prompt injection&lt;br&gt;Input filtering and tool allow-lists&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="1211" y="945" width="382" height="149" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Scenario 2&lt;br&gt;Data leakage&lt;br&gt;Retrieval filtering and post redaction&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="871" y="1086" width="321" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="note3" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Scenario 3&lt;br&gt;Access control bypass&lt;br&gt;Role system and tool validation&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="1211" y="1105" width="372" height="169" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-10" value="&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="190" y="370" width="505" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endSize=12;strokeWidth=2;" edge="1" parent="1" source="2ylnhe91_07ZGJmHf7mg-11" target="2ylnhe91_07ZGJmHf7mg-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="319.9999999999998" y="586.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-11" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Retrieval filtering / summarization&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="202" y="388" width="236" height="99" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-12" value="&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="718" y="373" width="493" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-13" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;RAG index / document store&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="452" y="390" width="234" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-14" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Tool and parameter allow-lists&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="742" y="389" width="235" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-15" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Tool or Plugin&lt;br&gt;(API endpoint)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="983" y="390" width="215" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-16" value="Element1&#xa;(any graphical node)" style="shape=rect;strokeWidth=2;fontStyle=1;html=1;whiteSpace=wrap;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="527" y="1222" width="278" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-17" value="{constraint text}" style="align=left;html=1;verticalAlign=middle;labelPosition=right;verticalLabelPosition=middle;labelBackgroundColor=none;fontSize=10" connectable="0" vertex="1" parent="2ylnhe91_07ZGJmHf7mg-16">
+          <mxGeometry x="278" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endSize=12;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="487" as="sourcePoint" />
+            <mxPoint x="1069" y="484" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="502" />
+              <mxPoint x="1069" y="502" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-34" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;dashed=1;strokeWidth=3;strokeColor=#FFB570;" edge="1" parent="1" source="2ylnhe91_07ZGJmHf7mg-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="717" y="145" as="sourcePoint" />
+            <mxPoint x="261" y="611" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-35" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.644;exitY=1.047;exitDx=0;exitDy=0;dashed=1;strokeWidth=3;strokeColor=#FFB570;exitPerimeter=0;" edge="1" parent="1" source="2ylnhe91_07ZGJmHf7mg-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="271" y="497" as="sourcePoint" />
+            <mxPoint x="596" y="606" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-37" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;dashed=1;strokeWidth=3;strokeColor=#FFB570;" edge="1" parent="1" source="2ylnhe91_07ZGJmHf7mg-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="613" y="498" as="sourcePoint" />
+            <mxPoint x="801" y="616" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-39" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Scenario 1:&lt;br&gt;Prompt injection&lt;br&gt;Input filtering and tool allow-lists&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="54" y="-189" width="389" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-40" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Scenario 3:&lt;br&gt;Access control bypass&lt;br&gt;Role system and tool validation&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="756" y="229" width="405" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-41" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Scenario 2:&lt;br&gt;Data leakage&lt;br&gt;Retrieval filtering and post redaction&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="67" y="220" width="353" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="2ylnhe91_07ZGJmHf7mg-42" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.874;exitY=0.052;exitDx=0;exitDy=0;strokeWidth=3;exitPerimeter=0;strokeColor=#2D7600;flowAnimation=0;shadow=0;entryX=0.36;entryY=0.994;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#60a917;" edge="1" parent="1" source="2ylnhe91_07ZGJmHf7mg-11" target="llm">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="652" y="310" as="sourcePoint" />
+            <mxPoint x="573" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q_0bkTGc4Cj3Mn6Je6cg-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.661;exitY=1.032;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.111;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=3;strokeColor=#B20000;fillColor=#e51400;" edge="1" parent="1" source="llm" target="2ylnhe91_07ZGJmHf7mg-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="768" y="387" as="sourcePoint" />
+            <mxPoint x="1277" y="171" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q_0bkTGc4Cj3Mn6Je6cg-4" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="1271" y="-295" width="274" height="910" as="geometry" />
+        </mxCell>
+        <mxCell id="q_0bkTGc4Cj3Mn6Je6cg-7" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;Application Boundary&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-204" y="-271" width="355" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="q_0bkTGc4Cj3Mn6Je6cg-5" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="-285" y="-286" width="278" height="904" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="SOOf1ISE1L7ZzfLsuVDb" name="Page-2">
+    <mxGraphModel dx="1265" dy="894" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
